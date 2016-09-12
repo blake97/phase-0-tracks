@@ -1,0 +1,52 @@
+#contact-info{
+  font-size: .8em;
+}
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 15px;
+  padding: 7px 7px 7px 7px;
+  margin-bottom: 12px;
+
+}
+.ulist {
+
+  font-size: .8em;
+
+}
+
+
+/* Cascading style sheets refers to the order in 
+which the sheet is read by the program (browser): from top
+to bottom; in order of more general to more
+specific. Also, in conflicting situations, the last
+thing implemented is the thing that shows up.*/
+
+/*  Pseudo-selectors allow us to place conditional rules
+on an element... so, hover would be one. We apply different 
+css to a link to show when it is hovered over versus when it
+is not.*/
+
+/* unvisited link */
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+ul > :first-child {
+    background: yellow;
+}
