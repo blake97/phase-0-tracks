@@ -1,0 +1,52 @@
+Elevator
+
+- find out which number to press from owner input
+- recognize elevator door.
+	- closed state description
+	- open state description
+- determine which floor you are on by scanning inside of elevator entrance, or along immediate wall elevator is located in.
+- once the elevator is located, locate elevator call button(s). 
+- determine if destination is above or below current floor
+	-if above, press up button, located on top of two button set
+	- if below, press down button, located on bottom of two-button set
+- stand back to allow previous occupants to exit elevator.
+- wait for doors to open.
+- after doors open, allow previous occupants to exit elevator.
+- once elevator is empty, quickly move into at a 90% angle to the elevator door and turn 180%.
+- locate the elevator button pad, which is a plate immediately beside the elevator door. Scan both sides. Correct pad has rows of buttons with numbers.
+-advance to within reaching distance of the button pad
+-determine how the button pad is oriented find where buttons are in relation to numbers.
+- scan pad for the correct first number in destination floor.
+	- if single digit floor, stop scanning and press button
+	- if multiple digit floor, scan selection of buttons matching first integer 	for second integer.
+- once the number has been correctly located, press floor’s corresponding button.
+- without hitting other passengers, orient within the elevator to be standing 90% relative to the elevator’s opening. Elevator doors should be directly in front with enough space on either side to allow clearance of exit.
+- use accelerometer to detect when elevator has stopped moving
+- once stopped moving, listen for signaling tone and use photo receptors to detect threshold change in light.
+- once exit cues met, exit the elevator. Progress until sensors detect crossing the elevator threshold. Continue forward at least one meter from elevator opening, but 1 foot before any wall. stop. 
+
+
+——————————
+
+
+Making a phone call on iPhone
+
+
+- locate phone
+- pick up phone and orient such that the glass screen is facing you, with the circular button on bottom. 
+- press power button OR circular button once and release to turn screen on.
+- while screen is on, press home button again (for iOS 10 only) and enter in user’s 4 digit code.
+-once unlocked, press home button 2 times, pausing a second in between each press. This will be enough to sufficiently bring the user out of any previously active application, back to a home page.
+- for a home page, we will use the system search for “Phone.” We are using this approach, becasue people don’t keep their phone app in the same place.
+	1) place finger on screen 1/3 from top of the screen.
+	2) with finger not separating from screen, drag down until a search bar is 		displayed. Release finger.
+	3) type >phone< (excluding carrots). Select Green square with white phone in 	middle by touching it and releasing.  it is generally the first hit.
+
+-Make call using keypad
+	-press and release circular number buttons until fully desired number is 		displayed at top of the screen.
+	-press green circular button with white phone in middle. 
+	- raise phone to head such that center top of phone is placed alongside the 	head, and in-line with ear canal. 
+	- when call is answered, begin conversation.
+- when done, hang up phone by pressing red circular button with white phone in middle.
+-put phone away.
+ 
