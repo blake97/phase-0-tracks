@@ -1,1 +1,32 @@
-p {background-color: lightblue;}
+* {
+  max-width:960px;
+}
+
+header{
+  text-align: center;
+  background-color: pink;
+  border: solid;
+}
+
+section.column-1 {
+  display: inline-block;
+  max-width:50%;
+  background-color: lightgreen;
+}
+
+section.column-2 {
+  display: inline-block;
+  max-width:50%;
+  background-color: lightblue;
+  vertical-align: top;
+}
+
+img {
+  width: 50px;
+  margin: 0 auto;
+}
+
+#octocat {
+  background-color: red;
+}
+
