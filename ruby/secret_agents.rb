@@ -10,6 +10,8 @@ program exits
 =end
 
 
+
+
 # <<<<<< ~~~~~~~~~~________Encryption________~~~~~~~~~~  >>>>>> #
 
   def encrypt(string)
@@ -55,13 +57,33 @@ puts encrypt("zed")
 puts decrypt("bcd")
 puts decrypt("afe")
 
-
-
+puts decrypt(encrypt("swordfish"))
+#this returns original input. this is because we are changing and immediately undoing that change prior to returning the result.#
     
+    
+# <<<<<< ~~~~~~~~~~________ User Interface ________~~~~~~~~~~  >>>>>> #
 
-   
+valid_input=false
 
-
+puts "hello, would you like to decrypt or encrypt a password?"
+until valid_input
+  answer = gets.chomp
+  case answer
+    when "encrypt", "Encrypt","ENCRYPT"
+      valid_input=true
+      puts "please give me the message to encrypt."
+      password=gets.chomp
+      puts encrypt(password)
+    when "decrypt", "Decrypt", "DECRYPT"
+      valid_input=true
+      puts "please give me the message to decrypt."
+      password=gets.chomp
+      puts decrypt(password)
+    else
+      puts "please answer with 'encrypt' or 'decrypt'"
+      valid_input=false
+    end
+end
 
 
 
