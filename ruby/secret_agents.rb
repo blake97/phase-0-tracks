@@ -17,6 +17,8 @@ program exits
     until index == string.length
       if string[index]== " "
           string[index]=" " 
+      elsif string[index]== "z"
+          string[index]="a"
       else 
         string[index].next
         string[index]=string[index].next
@@ -34,11 +36,11 @@ def decrypt(string)
   index = 0
   until index == string.length
       if string[index]== " "
-          string[index]=" " 
+          string[index]=" "
       else 
         alphabet = string[index]
-        p string[index] #for debug
-        p reference.index(alphabet) #for debug
+        string[index] #for debug
+        reference.index(alphabet) #for debug
         placement = reference.index(alphabet) 
         placement = placement - 1
         string[index] = reference[placement]
@@ -48,8 +50,10 @@ def decrypt(string)
  string #implicitly return string value
 end     
 
-
-
+puts encrypt ("abc")
+puts encrypt("zed")
+puts decrypt("bcd")
+puts decrypt("afe")
 
 
 
