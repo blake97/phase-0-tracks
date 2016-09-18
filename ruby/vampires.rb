@@ -6,20 +6,20 @@ puts "note that this form is to be filled out by the interviewer only after an i
   name = gets.chomp
 
   # to determine if name is in vampire database 
-    puts "\nIs the interviewee name on vampire list? please mark 'y' or 'n'."
-    valid_name_input = false
-    until valid_name_input
-      name_list = gets.chomp
-        if name_list == "y"
-          name_on_vampire_list = true
-          valid_name_input = true
-        elsif name_list == "n"
-          name_on_vampire_list = false
-          valid_name_input = true
-        else 
-          puts "please enter 'y' or 'n'"
-       end
-    end
+  puts "\nIs the interviewee name on vampire list? please mark 'y' or 'n'."
+  valid_name_input = false
+  until valid_name_input
+    name_list = gets.chomp
+      if name_list == "y"
+        name_on_vampire_list = true
+        valid_name_input = true
+      elsif name_list == "n"
+        name_on_vampire_list = false
+        valid_name_input = true
+      else 
+        puts "please enter 'y' or 'n'"
+     end
+  end
 # <<<<<< ~~~~~~~~~~________ Age-Related ________~~~~~~~~~~  >>>>>> #
   puts "\nHow old is interviewee?"
     begin
@@ -84,30 +84,30 @@ puts "note that this form is to be filled out by the interviewer only after an i
           puts "please enter 'y' or 'n'"
         end
     end
-
 # <<<<<< ~~~~~~~~~~________ Evaluating Test Logic________~~~~~~~~~~  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> #
-
-# <<<<<< ~~~~~~~~~~________ Basic Vampire ID Logic ________~~~~~~~~~~  >>>>>> #
+#Basic Vampire ID Logic ________#
   # name_on_vampire_list = true
   # vampires_correct_age = false
   # vampires_like_garlic = false
   # vampires_needs_insurance = false
 
-#___ Combined Rule Logic___#
+#Combined Rule Logic____________#
 if vampires_correct_age =true && vampires_like_garlic =true
   puts "Probably not a Vampire."
-elsif !(vampires_correct_age=true && vampires_like_garlic=true)
+
+
+elsif !(vampires_correct_age=true) && (vampires_like_garlic=false || vampires_needs_insurance=false)
   puts "Probably a Vampire."
+
 elsif vampires_correct_age=false && vampires_like_garlic=false && vampires_needs_insurance=false
   puts "Almost certainly a vampire."
+
 elsif name_list=true 
   puts "Definitely a vampire."
 
+else 
+  puts "Results Inconclusive"
 
-
-
-
-#__Match code to outcome__#
 
 
 
