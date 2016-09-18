@@ -12,9 +12,35 @@ puts "\n\nHow many interviewees do you wish to review?"
         retry
       end
 
+
+
+
 current = 0
 until current==numberrepeat
 puts "\n\n\nThis is interviewee #{current+1} out of #{numberrepeat} total interviewees."
+   
+
+    # <<<<<< ~~~~~~~~~~________ Listing allergies________~~~~~~~~~~ #
+
+
+puts "Please list any interviewee allergies, one by one. When finished, please type 'done.'"
+
+endsignal=false
+until endsignal
+  allergy= gets.chomp
+  case allergy
+    when "sun", "sunshine", "sunlight", "sun rays"
+      puts "Probably a vampire"
+      endsignal=true
+    when "done","none","na","n/a","N/A"
+      puts "thank you for listing all allergies."
+      endsignal =true
+    else
+      endsignal=false
+      puts "Thank you. Next allergy?"
+  end
+end
+
     # <<<<<< ~~~~~~~~~~________ name ________~~~~~~~~~~  >>>>>> #
       puts "\n\nWhat is interviewee name?"
       name = gets.chomp
@@ -127,8 +153,7 @@ puts "\n\n\nThis is interviewee #{current+1} out of #{numberrepeat} total interv
 end
 
 
-
-
+abort("\n\nActually, never mind! What do these questions have to do with anything? Let's all be friends.")
 
 
 
