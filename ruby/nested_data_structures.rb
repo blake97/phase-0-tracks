@@ -1,4 +1,4 @@
-# I will be basing my data structure on a city block
+# I will be basing my data structure on NYC's Boroughs
 
 NYC_Boroughs = {
   manhattan: {
