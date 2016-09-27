@@ -51,6 +51,7 @@ agent_name_input= gets.chomp
     vowels (reverse_name)
     puts "\nYour secret name is #{reverse_name}. Please enter another name to create another alias for, or type 'quit' to exit the program."
   end
+  results
 end
    
  
