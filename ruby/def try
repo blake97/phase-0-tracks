@@ -1,0 +1,11 @@
+def try  
+  if block_given?  
+    yield  
+  else  
+    puts "no block"  
+  end  
+end  
+
+do 
+puts "hello"
+end
