@@ -17,6 +17,9 @@
 # Lick
 # Run
 
+class Puppy
+end
+
 
 
 
