@@ -26,8 +26,8 @@ duchess.fetch("lamp")
 # Puppy class speak method -------------------->>>
 class Puppy
   def speak(number_woofs)
-   number_woofs=number_woofs.to_i
-     number_woofs.times {puts "Woof!"}
+    number_woofs=number_woofs.to_i
+    number_woofs.times {puts "Woof!"}
   end
 end
 
@@ -71,5 +71,61 @@ class Puppy
     puts "Initializing new puppy instance ..."
   end
 end
+
+
+# <<<<<< ~~~~~~~~~~________ Release 2: Writing my own Class! ________~~~~~~~~~~  >>>>>> #
+####### METHODS/CLASSES ##########
+class Gymnast
+  def initialize
+    puts "Initializing new Gymnast instance ..."
+  end
+  
+  def flip
+    puts "**gymnast flips**"
+  end
+  
+  def cartwheel
+    puts "**gymnast does a cartwheel**"
+  end
+end
+
+########## DRIVER CODE METHOD ############
+# Create 50 Gymnasts Method-------------------->>>
+def start_off 
+  puts "Attempting to initialize 50 new gymnasts:" ########=> you don't need this here, since initialize will print this
+  gymnast_array=[]
+  50.times do
+    gymnast_array << Gymnast.new
+    # p gymnast_array[instance_count] #<== DEBUG 
+  end
+  gymnast_array #=> implicit return
+end
+
+## Actual Driver Code
+gymnast = start_off # setting our variable to the array from start_off method 
+
+gymnast.each {|x| x.flip ; x.cartwheel }
+puts "End."
+
+############### Notes
+#REPL wont see this: if variable_x = 100
+
+### OTHER NOTES:
+.map # returns a NEW ARRAY
+.map! # returns and changes the original array
+.each #=> returns n
+
+array = [1,2,3,4,5]
+p array.each { |x| x = "something different" ; puts "HELLO" }
+p array # what's put out? what is array? 
+
+
+
+
+
+
+
+
+
 
 
