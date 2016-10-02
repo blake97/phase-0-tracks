@@ -58,29 +58,67 @@ class Santa
   #     @gender = new_gender
   #   end
 
-  end
+end
 
 def santa_info
   puts "Santa is #{Santa.get_ethnicity}, and Santa is #{nta.get_age} years old."
 end
 
-  ########## DRIVER CODE for Release 0 ############
-  #testing new instance
+########## DRIVER CODE for Release 0 ############
+#testing new instance
 
-  santas = [] #<= created empty santa array
-  #add new instances of santa gender
-  new_santa_genders =["gender questioning","transgender person","transgender female","transgender woman","transgender man","neutrois",
-                      "male", "other", "male", "female", "female"]
-  #added the same number of instances for santa ethnicities
-  new_santa_ethnicities =["polynesian","black","white", "north african", "south american", "alaska native", "sub-saharan african","white", "hispanic mestizo", "asian american", "asian american"]
+santas = [] #<= created empty santa array
+#add new instances of santa gender
+new_santa_genders =["gender questioning","transgender person","transgender female","transgender woman","transgender man","neutrois",
+                    "male", "other", "male", "female", "female"]
+#added the same number of instances for santa ethnicities
+new_santa_ethnicities =["polynesian","black","white", "north african", "south american", "alaska native", "sub-saharan african","white", "hispanic mestizo", "asian american", "asian american"]
 
 
-  new_santa_genders.length.times do |i| #<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
-    santas << Santa.new(new_santa_genders[i],new_santa_ethnicities[i]) #<= creating a pair of arguments that match our definition, iterating to reference them, feeding them to the santa initialization method above
-    puts "There are now #{santas.length} Santa instances in the array"
-    puts "----"
-  end
+new_santa_genders.length.times do |i| #<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
+  santas << Santa.new(new_santa_genders[i],new_santa_ethnicities[i]) #<= creating a pair of arguments that match our definition, iterating to reference them, feeding them to the santa initialization method above
+  puts "There are now #{santas.length} Santa instances in the array"
+  puts "----"
+end
 
-Santa.santa_info
+Santa.eat_milk_and_cookies
+
+
+####### generating a ton of Santas by selecting from both arrays at random. ############
+
+
+
+100.each do |i|#<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
+  santas << Santa.new((new_santa_genders.sample),(new_santa_ethnicities.sample)) #<= creating a pair of arguments that match our definition, iterating to reference them, feeding them to the santa initialization method above
+  puts "This santa is #{@gender[i]} and #{@age[i]}."
+  puts "There are now #{santas.length} Santa instances in the array. "
+  puts "----"
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
