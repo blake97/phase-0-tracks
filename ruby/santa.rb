@@ -11,7 +11,7 @@ class Santa
     puts "*** Santa eats milk and cookies ***"
   end
   #initialize new instance of Santa
-  def initalize
+  def initialize
     puts "Initializing Santa instance..."
   end
 end
@@ -20,3 +20,5 @@ end
 #testing new instance
 
 Santa.new
+
+
