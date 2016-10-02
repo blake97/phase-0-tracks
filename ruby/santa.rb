@@ -1,7 +1,8 @@
 ####### METHODS/CLASSES ##########
 
 class Santa
-
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
 
   #initialize new instance of Santa
   def initialize(gender,ethnicity)
@@ -10,7 +11,6 @@ class Santa
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0
-
   end
 
 
@@ -42,39 +42,45 @@ class Santa
     end
   end
 
+
+  # # Getter Methods <== wanted to keep the code for future reference, but have commented out because attr_reader does it on line 4
+  #   def get_age
+  #     @age
+  #   end
+
+  #   def get_ethnicity
+  #     @ethnicity
+  #   end
+
+
   # SETTER METHODS: Can be changed outside of Santa class.
-  def gender_change (new_gender)
-    @gender = new_gender
+  #   def gender_change (new_gender)
+  #     @gender = new_gender
+  #   end
+
   end
 
-  # Getter Methods
-  def get_age
-    @age
-  end
-
-  def get_ethnicity
-    @ethnicity
-  end
-
+def santa_info
+  puts "Santa is #{Santa.get_ethnicity}, and Santa is #{nta.get_age} years old."
 end
 
+  ########## DRIVER CODE for Release 0 ############
+  #testing new instance
+
+  santas = [] #<= created empty santa array
+  #add new instances of santa gender
+  new_santa_genders =["gender questioning","transgender person","transgender female","transgender woman","transgender man","neutrois",
+                      "male", "other", "male", "female", "female"]
+  #added the same number of instances for santa ethnicities
+  new_santa_ethnicities =["polynesian","black","white", "north african", "south american", "alaska native", "sub-saharan african","white", "hispanic mestizo", "asian american", "asian american"]
 
 
-########## DRIVER CODE for Release 0 ############
-#testing new instance
+  new_santa_genders.length.times do |i| #<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
+    santas << Santa.new(new_santa_genders[i],new_santa_ethnicities[i]) #<= creating a pair of arguments that match our definition, iterating to reference them, feeding them to the santa initialization method above
+    puts "There are now #{santas.length} Santa instances in the array"
+    puts "----"
+  end
 
-santas = [] #<= created empty santa array
-#add new instances of santa gender
-new_santa_genders =["gender questioning","transgender person","transgender female","transgender woman","transgender man","neutrois",
-                    "male", "other", "male", "female", "female"]
-#added the same number of instances for santa ethnicities
-new_santa_ethnicities =["polynesian","black","white", "north african", "south american", "alaska native", "sub-saharan african","white", "hispanic mestizo", "asian american", "asian american"]
+Santa.santa_info
 
 
-new_santa_genders.length.times do |i| #<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
-  santas << Santa.new(new_santa_genders[i],new_santa_ethnicities[i]) #<= creating a pair of arguments that match our definition, iterating to reference them, feeding them to the santa initialization method above
-  puts "There are now #{santas.length} Santa instances in the array"
-  puts "----"
-end
-
-puts "Santa is #{santa.get_ethnicity}, and Santa is #{santa.get_age} years old."
