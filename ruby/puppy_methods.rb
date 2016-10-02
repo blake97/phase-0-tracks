@@ -65,4 +65,11 @@ end
 fido.guitar
 
 
+# Initialize method -------------------->>>
+class Puppy
+  def initialize
+    puts "Initializing new puppy instance ..."
+  end
+end
+
 
