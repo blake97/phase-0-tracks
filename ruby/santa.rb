@@ -1,4 +1,3 @@
-# <<<<<< ~~~~~~~~~~________ Release 0: Writing SantaClass ________~~~~~~~~~~  >>>>>> #
 ####### METHODS/CLASSES ##########
 
 class Santa
@@ -25,21 +24,57 @@ class Santa
   def eat_milk_and_cookies
     puts "*** Santa eats milk and cookies ***"
   end
+
+
+
+  # adding 3 attribute-changing methods: QUESTION - I'm making setter methods... how do i make a method that only works in the class... which is what they want the first two to be?
+
+  #  Class Methods?
+  def celebrate_birthday
+    @age = @age+1
+  end
+
+  def get_mad_at (reindeer_in_trouble)
+    @reindeer_ranking.each do|deer_name|
+      if deer_name == reindeer_in_trouble
+        deer_name.index = -1
+      end
+    end
+  end
+
+  # SETTER METHODS: Can be changed outside of Santa class.
+  def gender_change (new_gender)
+    @gender = new_gender
+  end
+
+  # Getter Methods
+  def get_age
+    @age
+  end
+
+  def get_ethnicity
+    @ethnicity
+  end
+
 end
+
+
 
 ########## DRIVER CODE for Release 0 ############
 #testing new instance
 
-santas = []
-
+santas = [] #<= created empty santa array
+#add new instances of santa gender
 new_santa_genders =["gender questioning","transgender person","transgender female","transgender woman","transgender man","neutrois",
                     "male", "other", "male", "female", "female"]
-
+#added the same number of instances for santa ethnicities
 new_santa_ethnicities =["polynesian","black","white", "north african", "south american", "alaska native", "sub-saharan african","white", "hispanic mestizo", "asian american", "asian american"]
 
 
-new_santa_genders.length.times do |i|
-  santas << Santa.new(new_santa_genders[i],new_santa_ethnicities[i])
+new_santa_genders.length.times do |i| #<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
+  santas << Santa.new(new_santa_genders[i],new_santa_ethnicities[i]) #<= creating a pair of arguments that match our definition, iterating to reference them, feeding them to the santa initialization method above
   puts "There are now #{santas.length} Santa instances in the array"
   puts "----"
 end
+
+puts "Santa is #{santa.get_ethnicity}, and Santa is #{santa.get_age} years old."
