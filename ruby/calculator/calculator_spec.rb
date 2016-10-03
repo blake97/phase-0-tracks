@@ -26,6 +26,7 @@ describe Calculator do
   end
 
   it "divides two integers" do
-    expect(calculator.multiply(10,2)).to eq 5
+    expect(calculator.divide(10,2)).to eq 5
+  end
 end
 
