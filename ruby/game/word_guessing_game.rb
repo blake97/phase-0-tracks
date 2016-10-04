@@ -31,8 +31,8 @@
 #win?
 ############################################## Class Code #######################
 class Wordgame
-  attr_reader :game_board :game_outcome :num_guesses_allowed
-  attr_accessor :word_to_guess :guessed_letters
+  attr_reader :game_board, :game_outcome, :num_guesses_allowed
+  attr_accessor :word_to_guess, :guessed_letters
 
 
   def initialize
