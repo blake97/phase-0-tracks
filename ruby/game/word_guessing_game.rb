@@ -35,54 +35,59 @@
 #win?
 ############################################## Class Code #######################
 class Wordgame
-  attr_reader :game_board
-  attr_reader :game_outcome
+  attr_reader :game_board :game_outcome :num_guesses_allowed
+  attr_accessor :word_to_guess
+
 
   def initialize
-    @word_to_guess = ""
+    @word_to_guess = nil
     @num_guesses_allowed = (@word_to_guess.length)-3
-    @game_board = @word_to_guess.lenth {|x| x*_}
-    @game_over = false
+    @game_board = @word_to_guess.lenth {|x| x*"_"}
   end
 
-  def 
 
+  def split_word
+    @letters =@word_to_guess.split('')
+  end
+
+
+  def current_try (letter_guess)
+    until current_guess == @num_guesses_allowed
+      if @letters.times.map! do |x| include?'#letter_guess'
+          @game_board[x] = current_guess
+          puts "You found a letter! #BOOM!!! Here's your updated Board: #{@game_board}"
+          if @game_board = word_to_guess
+            puts "YOU WIN! You so smaaaarrrrttttt!"
+            exit
+          end
+        end
+      else @letters.each {|x| !include?'#letter_guess'}
+        puts "Nope... not a letter. Womp. The current game board is still #{{@game_board}}"
+        puts "Please select another letter. This is #{current_guess} of #{@num_guesses_allowed}"
+        current_guess +=1
+      end
+    end
+    puts "You loose. Peace out... oh, and the word was @word_to_guess, dummy."
+    exit
+  end
 end
 
 
 ############################################## Driver Code #######################
-puts "Welcome to the Game! Player 1 - type in the word you want player 2 to guess."
+puts "Welcome to the Game!"
+game = Wordgame.new
+
+puts "Player 1 - type in the word you want player 2 to guess."
 @word_to_guess = gets.chomp
 
 
+puts "Great. That's a #{word_to_guess.length}-letter-long word, so player 2 gets
+#{num_guesses_allowed} guesses allowed!"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+puts "Player 1. Please make your first guess and hit enter."
+current_guess = 1
+letter_guess = gets.chomp.to_s
+letter_guess.current_try(letter_guess)
 
 
 
