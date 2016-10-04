@@ -1,25 +1,46 @@
-def add_items (items_string)
-  grocery_list = {}
-  puts items_string
-  split_food = items_string.split(' ')
-  split_food.each {|item| grocery_list[item]=0}
+############# Method to create a list
+
+
+# get a string
+def grocery_list(string)
+  #turn into an array
+  array = string.split(" ")
+  #turn array into a hash with each key having a value of 1
+  grocery_hash = Hash.new
+  array.each do |item|
+    grocery_hash[item] = 1
+  end
+
+  #use hash to print out grocery_list
+  def print_list(grocery_list)
+    grocery_list.each do |item,quantity|
+      puts " #{item} #{quantity}"
+    end
+  end
+# using grocery hash output as input for print_list
+  print_list(grocery_hash)
 end
 
-add_items("lemonade tomato onion ice-cream")
+############# Method to add item to a list
 
-def add_one_item (x)
-  grocery_list {item: watermellon}
+def add(grocery_list, item, quantity)
+  grocery_list[item] = quantity
 end
 
+############# Method to remove item to a list
+def remove(grocery_list, item)
+  grocery_list.delete(item)
+end
+
+############# Method to update quantity
+def update(grocery_list, item, quantity)
+  grocery_list[item] = quantity
+end
+
+############### Driver Code to test ###############
+grocery_list("potatoe_chips marshmallows carrot hot_dogs")
+
+grocery_list.add(grocery_list,pumpkin_pie,4)
 
 
 
-
-create_list('carrots apples pizza milk')
-add_item('lemonade', 2)
-add_item('tomatoes', 3)
-add_item('onions', 1)
-add_item('ice_cream', 4)
-remove_item('lemonade')
-update_qty('ice_cream', 1)
-print_list
