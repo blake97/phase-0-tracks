@@ -21,8 +21,8 @@ class Santa
 
 
   #eat_milk_and_cookies method
-  def eat_milk_and_cookies
-    puts "*** Santa eats milk and cookies ***"
+  def eat_milk_and_cookies(type)
+    puts "*** That was a good @{type}!"
   end
 
 
@@ -31,11 +31,11 @@ class Santa
 
   #  Class Methods?
   def celebrate_birthday
-    @age = @age+1
+    age = age+1
   end
 
   def get_mad_at (reindeer_in_trouble)
-    @reindeer_ranking.each do|deer_name|
+    reindeer_ranking.each do|deer_name|
       if deer_name == reindeer_in_trouble
         deer_name.index = -1
       end
@@ -88,7 +88,7 @@ Santa.eat_milk_and_cookies
 
 
 
-100.each do |i|#<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
+10.each do |i|#<= for the length of new instances, instruct the following to run that number of times, and identify "i" as the iteration key
   santas << Santa.new((new_santa_genders.sample),(new_santa_ethnicities.sample)) #<= creating a pair of arguments that match our definition, iterating to reference them, feeding them to the santa initialization method above
   puts "This santa is #{@gender[i]} and #{@age[i]}."
   puts "There are now #{santas.length} Santa instances in the array. "

@@ -1,5 +1,6 @@
 # <<<<<< ~~~~~~~~~~________Collect the data________~~~~~~~~~~  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> #
-puts "note that this form is to be filled out by the interviewer only after an in-person interview has taken place." 
+puts "note that this form is to be filled out by the interviewer only after an in-person 
+interview has taken place." 
 
 
 
@@ -127,7 +128,9 @@ puts "\n\n\nThis is interviewee #{current+1} out of #{numberrepeat} total interv
 #Combined Rule Logic____________#
 
 
-  if name_list==true && (vampires_correct_age==true||vampires_correct_age==false||vampires_like_garlic==true||vampires_like_garlic==false||vampires_needs_insurance==true||vampires_needs_insurance=false)
+  if name_list==true && (vampires_correct_age==true||vampires_correct_age==false||
+                          vampires_like_garlic==true||vampires_like_garlic==false||
+                          vampires_needs_insurance==true||vampires_needs_insurance=false)
           puts "\n\nResult for #{name}: Definitely a vampire."
 
     elsif name_list==false && vampires_correct_age==false && vampires_like_garlic==false && vampires_needs_insurance==false
@@ -136,7 +139,8 @@ puts "\n\n\nThis is interviewee #{current+1} out of #{numberrepeat} total interv
     elsif !(name_list==true) && vampires_correct_age==false && (vampires_like_garlic==false || vampires_needs_insurance==false)
           puts "\n\nResult for #{name}: Probably a Vampire."
 
-    elsif name_list==false && vampires_correct_age==true && vampires_like_garlic==true && (vampires_needs_insurance==true||vampires_needs_insurance==false)
+    elsif name_list==false && vampires_correct_age==true && vampires_like_garlic==true && (vampires_needs_insurance==true||
+      vampires_needs_insurance==false)
       puts "\n\nResult for #{name}: Probably not a Vampire."
 
     else 

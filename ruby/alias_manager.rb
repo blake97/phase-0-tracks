@@ -1,6 +1,4 @@
-
-
- # ugly as hell method for swapping vowels only
+# ugly as hell method for swapping vowels only
    def vowels(string)
       index = 0
       until index == string.length
@@ -56,22 +54,3 @@ end
    
  
 puts "\n\nThank you for using the agent alias generator. Goodbye."
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

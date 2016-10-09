@@ -58,7 +58,8 @@ puts decrypt("bcd")
 puts decrypt("afe")
 
 puts decrypt(encrypt("swordfish"))
-#this returns original input. this is because we are changing and immediately undoing that change prior to returning the result.#
+#this returns original input. this is because we are changing and
+#immediately undoing that change prior to returning the result.#
     
     
 # <<<<<< ~~~~~~~~~~________ User Interface ________~~~~~~~~~~  >>>>>> #
