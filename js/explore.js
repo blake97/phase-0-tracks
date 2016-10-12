@@ -19,6 +19,7 @@ function reverse_string(input) {
 
 
 
+
 // #### driver code ####
 reverse_string('hello');
 
@@ -26,6 +27,8 @@ reverse_string('hello');
 var num=1
 if (num == 1){
   console.log (reverse_string('hello'));
+}
+
 
 
 
