@@ -15,9 +15,8 @@
 
 ########### Business Methods ###########
 #reference
-vowels = "aeiou"
-consonants = "abcdefghijklmnopqrstuvwxyz".delete("#{vowels}")
-transformed_array =[]
+
+
 
 
 def name_processing (input_name)
@@ -26,10 +25,13 @@ def name_processing (input_name)
 end
 
 
-
 def spy_name_generation(characters_array)
   #loop through resulting array, determine appropriate reference strand,
   # create next value. Take care of spaces and end-of-reference string cases.
+  vowels = "aeiou"
+  consonants = "abcdefghijklmnopqrstuvwxyz".delete("#{vowels}")
+  transformed_array =[]
+  
   characters_array.map! do |char|
     if char == ' '
       next_char = ' '
@@ -50,18 +52,18 @@ def spy_name_generation(characters_array)
 end
 
 
-  ########### Driver Code ###########
+########### Driver Code ###########
 
 
-  # get name, downcase, split string into wors, reverse word order, rejoin
-  # words into one string.
-  puts "Enter your name, or enter 'quit' to exit the program"
+# get name, downcase, split string into wors, reverse word order, rejoin
+# words into one string.
+puts "Enter your name, or enter 'quit' to exit the program"
+input_name = gets.chomp.downcase
+
+loop do
+  puts "Your spy name is #{spy_name_generation(name_processing(input_name))}. Enter another name, or type 'quit' and press enter to exit the program."
   input_name = gets.chomp.downcase
-  
-  loop do
-    puts "Your spy name is #{spy_name}. Enter another name, or type 'quit' and press enter to exit the program."
-    input_name = gets.chomp.downcase
-    break if input_name == 'quit'
-  end
-  
-  puts "Thank you and have a nice day."
+  break if input_name == 'quit'
+end
+
+puts "Thank you and have a nice day."
