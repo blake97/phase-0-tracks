@@ -37,15 +37,16 @@ characters_array.map! do |char|
   elsif char == 'z'
     next_char ='b'
   elsif consonants.include?(char)
-    next_char = consonants.char.next
-      
-      
-
-
-
+    next_consonant_ref_index = consonant.index(char)+1
+    next_char = consonant[next_consonant_ref_index]
+  elsif vowels.include?(char)
+    next_vowel_ref_index = vowel.index(char)+1
+    next_char = vowel[next_vowel_ref_index]
   end
 transformed_array = transformed_array.push(next_char)
 end
+
+puts transformed_array
 
 
 
