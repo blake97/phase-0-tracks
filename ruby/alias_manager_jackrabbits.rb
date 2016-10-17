@@ -7,7 +7,7 @@
 # - create two reference strings, one for vowels and one for consonants.
 
 # - reference the input string at the first character.
-# - determine which reference string to reference. 
+# - determine which reference string to reference.
 # - loop through the input string and match the letter, changing it to the
 #   next value within that reference string.
 # - build the string back together
@@ -17,53 +17,40 @@ vowels = "aeiou"
 consonants = "abcdefghijklmnopqrstuvwxyz".delete("#{vowels}")
 transformed_array =[]
 
-# get name, downcase, split string into wors, reverse word order, rejoin 
+# get name, downcase, split string into wors, reverse word order, rejoin
 # words into one string.
-puts "enter your name"
-input_name = gets.chomp.downcase
-reverse_name = input_name.split(' ').reverse.join(' ')
+puts "enter your name, or enter 'quit' to exit the program"
+loop do
+  input_name = gets.chomp.downcase
+  break if input_name == 'quit'
 
-#break into characters. 
-p characters_array = reverse_name.chars
+  reverse_name = input_name.split(' ').reverse.join(' ')
 
-#loop through resulting array, determine appropriate reference strand, 
-# create next value. Take care of spaces and end-of-reference string cases.
+  #break into characters.
+  p characters_array = reverse_name.chars
 
-characters_array.map! do |char|
-  if char == ' '
-    next_char = ' '
-  elsif char == 'u'
-    next_char = 'a'
-  elsif char == 'z'
-    next_char ='b'
-  elsif consonants.include?(char)
-    next_consonant_ref_index = consonants.index(char)+1
-    next_char = consonants[next_consonant_ref_index]
-  elsif vowels.include?(char)
-    next_vowel_ref_index = vowels.index(char)+1
-    next_char = vowels[next_vowel_ref_index]
+  #loop through resulting array, determine appropriate reference strand,
+  # create next value. Take care of spaces and end-of-reference string cases.
+
+  characters_array.map! do |char|
+    if char == ' '
+      next_char = ' '
+    elsif char == 'u'
+      next_char = 'a'
+    elsif char == 'z'
+      next_char ='b'
+    elsif consonants.include?(char)
+      next_consonant_ref_index = consonants.index(char)+1
+      next_char = consonants[next_consonant_ref_index]
+    elsif vowels.include?(char)
+      next_vowel_ref_index = vowels.index(char)+1
+      next_char = vowels[next_vowel_ref_index]
+    end
+    transformed_array = transformed_array.push(next_char)
   end
-transformed_array = transformed_array.push(next_char)
+
+  puts spy_name = transformed_array.join('')
+  puts "Your spy name is #{spy_name}. Enter another name, or type 'quit' and press enter to exit the program."
 end
 
-puts transformed_array.join('')
-
-
-
-
-
-#code working on
-
-
-
-
-
-
-
-
-##### Driver Code
-
-
-
-puts vowels
-puts consonants
+puts "Thank you and have a nice day."
