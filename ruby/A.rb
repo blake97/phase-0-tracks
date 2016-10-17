@@ -1,18 +1,3 @@
-# <<<<<< ~~~~~~~~~~________ Pseudocode ________~~~~~~~~~~  >>>>>> #
-# - take the person's name and down-case it
-# - split the string into words within a data structure
-# - reverse the data structure
-# - join the data structure
-# - split out all of the letters
-# - create two reference strings, one for vowels and one for consonants.
-
-# - reference the input string at the first character.
-# - determine which reference string to reference.
-# - loop through the input string and match the letter, changing it to the
-#   next value within that reference string.
-# - build the string back together
-
-
 ########### Business Methods ###########
 #reference
 vowels = "aeiou"
