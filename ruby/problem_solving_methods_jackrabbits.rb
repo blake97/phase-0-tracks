@@ -41,7 +41,22 @@ fib_generator(primer, items_to_generate)
 
 # <<<<<< ~~~~~~~~~~________ Release 2: Sorting an Array  ________~~~~~~~~~~  >>>>>> #
 
-# - i move through the array in pairs, building a new output array using a loop.
+ #1 create intake for the starting array to be sorted.
+ # #2 iterate through the array in pairs, starting with the first two integers
+ # #3 if the first integer of the first pair is the larger one, put that number 
+ # in a new array, followed by the second integer. 
+ # # if the second one is larger, put that one first in the new array, followed
+ #  by the first integer.
+ # #4 shift the reading frame down the array by two. complete the same process 
+ # until reaching the end of the array.
+ # #5 set the new array equal to the starting array
+ # #6 continue steps 1-5 until there are no instances in which the second paired 
+ # integer is smaller than the first integer.
+ # #7 print the final new array
+
+
+############ second attempt, reviewing code from bubble sort.
+ # - i move through the array in pairs, building a new output array using a loop.
 # - start with first two numbers.
 # - I'd see if the first number was greater than the second one.
 # - If the first number is greater, I'd move that number to the front of a sorted array
@@ -50,37 +65,20 @@ fib_generator(primer, items_to_generate)
 
 
 
-# low to high
-
-arr = [1,3,9,6,7,8,]
-temp =[]
-
-
-ia = 0
-ib = 1
-arr.loop do |a, b|
- 
-  a= arr[ia]
-  b= arr[ib]
-
-  if a > b
-    temp.push(b)
-    temp.push(a)
-  else
-    temp.push(a)
-    temp.push(b)
-  end
-
-  until ib == arr.length-1
-    if a > b
-      temp.push(b)
-      temp.push(a)
-    else
-      temp.push(a)
-      temp.push(b)
+def bubble_sort(number_list)
+  n= number_list.length
+  loop do
+    flipped = false
+    (n-1).times do |i|
+      if number_list[i] > number_list[i+1]
+       number_list[i], number_list[i+1] = number_list[i+1], number_list[i]
+       flipped = true
+      end
     end
-    ia +=1
-    ib +=1
+    break if not flipped
   end
-
+number_list
 end
+
+number_list= [2,32,34,6,239,3,45]
+bubble_sort(number_list)
