@@ -59,5 +59,46 @@ p puppy.go_out?("happy")
 
 # <<<<<< ~~~~~~~~~~________ Release 2 ________~~~~~~~~~~  >>>>>> #
 
+puts "\n\n\n"
+
+######## Business Code ########
+
+class Cars
+  def initialize
+    puts "Initializing a new automobile..."
+  end
+
+  def is_automatic?(answer)
+    if answer == 'yes'
+      true
+    elsif answer == 'no'
+      false
+    end
+  end
+
+  def max_speed(int)
+    "This car can go #{int} mph."
+  end
+
+end
+
+
+
+######## Driver Code ########
+
+car_arr = []
+car = Cars.new
+p car.is_automatic?("yes")
+p car.max_speed(200)
+
+50.times.each do |x| x = Cars.new
+  car_arr << (x)
+end
+p car_arr
+
+
+car_arr.each do |item| p item.max_speed(22)
+ p item.is_automatic?('yes')
+end
 
 
