@@ -89,6 +89,12 @@ def print_pretty (grocery_list_hash)
   puts"<><><><><><><><><>"
 end
 
+
+# NOTE!!!! IMPORTANT!!!! Here, the code for creating 
+# and manipulating an array between methods has been 
+# set up such that a variable can be used to stand 
+# in for the first method...on which all other methods 
+# rely.
 # Driver Code ####################################
 # test create_list
 
