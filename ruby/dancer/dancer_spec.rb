@@ -1,5 +1,7 @@
+require_relative "dance_app"
+
 describe Dancer do
-  let(:dancer) { Dancer.new("Misty Copeland", 33) }
+  let(:dancer) {Dancer.new("Misty Copeland", 33)}
 
   it "pirouettes" do
     expect(dancer.pirouette).to eq "*twirls*"
@@ -17,7 +19,7 @@ describe Dancer do
     expect(dancer.age).to eq 33
   end
 
-  it "has a writeable age" do
+  it "has a writable age" do
     dancer.age = 34
     expect(dancer.age).to eq 34
   end
