@@ -7,5 +7,9 @@ colors.push("hot pink");
 names.push("Jerald");
 
 
-var horses_and_colors {}
-
+function connect_horses_to_colors(colors, names) {
+var horses_and_colors = {name:, age:}
+  for (var i = 0; i < colors.length; i++){
+      horses_and_colors.push(names[i]: colors[i])
+  }
+}
