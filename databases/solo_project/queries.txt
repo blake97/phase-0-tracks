@@ -78,16 +78,36 @@ Clownfish|7
 returns all rows from the right table (table2), with the matching rows in the left table (table1). The result is NULL in the left side when there is no match.
 
 (template)
-SELECT column_name(s)
-FROM table_name1
-RIGHT JOIN table_name2 
-ON table_name1.column_name=table_name2.column_name
-
-(implemented)
 select common_name
 from table_1
 right join phylogenic_order
 ON table_name1.column_name=table_name2.column_name
 
+(implemented)
+SELECT found_fish.common_name, found_fish.length
+FROM found_fish
+Right JOIN phylogenic_order 
+ON found_fish.order_id= phylogenic_order.id
+
 (proof)
 Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+
+*** self join ***
+is used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement.
+
+(template)
+SELECT a.column_name, b.column_name...
+FROM table1 a, table1 b
+WHERE a.common_field = b.common_field;
+
+(implemented)
+select a.common_name, b.length
+from found_fish a, found_fish b
+where a.length = b.length
+
+proof: 
+Clownfish|20
+Clownfish|20
+
