@@ -1,0 +1,93 @@
+1) Display the information in one table (either table is fine).
+
+select* from found_fish
+1|Guineafowl Puffer|20|0|1
+2|Clown Triggerfish|20|0|1
+3|Lionfish|18|1|2
+4|Clownfish|7|0|3
+
+
+
+2)Update an item that meets some condition
+
+the update:
+update found_fish set length = 19 where common_name = "Lionfish";
+
+the proof:
+select* from found_fish
+1|Guineafowl Puffer|20|0|1
+2|Clown Triggerfish|20|0|1
+3|Lionfish|19|1|2
+4|Clownfish|7|0|3
+
+
+
+3)Display the information in both tables using one query
+
+select* from found_fish, phylogenic_order where found_fish.order_id = phylogenic_order.id;
+1|Guineafowl Puffer|20|0|1|1|Tetraodontiformes
+2|Clown Triggerfish|20|0|1|1|Tetraodontiformes
+3|Lionfish|19|1|2|2|Scorpaeniformes
+4|Clownfish|7|0|3|3|Perciformes
+
+
+
+4)Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+select found_fish.common_name, found_fish.length, found_fish.is_invasive, phylogenic_order.order_name from found_fish join phylogenic_order on found_fish.order_id = phylogenic_order.id;
+
+Guineafowl Puffer|20|0|Tetraodontiformes
+Clown Triggerfish|20|0|Tetraodontiformes
+Lionfish|19|1|Scorpaeniformes
+Clownfish|7|0|Perciformes
+
+
+
+5)Delete an item that meets some condition (you can choose a condition that makes sense)
+delete from found_fish where is_invasive = 1;
+
+proof:
+1|Guineafowl Puffer|20|0|1
+2|Clown Triggerfish|20|0|1
+4|Clownfish|7|0|3
+
+
+/////////////// different join options ///////////////
+
+**left join:**
+returns all rows from the left table (table1), with the matching rows in the right table (table2). The result is NULL in the right side when there is no match.
+
+(template)
+SELECT column_name(s)
+FROM table_name1
+LEFT JOIN table_name2 
+ON table_name1.column_name=table_name2.column_name
+
+(implemented)
+SELECT found_fish.common_name, found_fish.length
+FROM found_fish
+LEFT JOIN phylogenic_order 
+ON found_fish.order_id= phylogenic_order.id
+
+(proof)
+Guineafowl Puffer|20
+Clown Triggerfish|20
+Clownfish|7
+
+**right join:**
+returns all rows from the right table (table2), with the matching rows in the left table (table1). The result is NULL in the left side when there is no match.
+
+(template)
+SELECT column_name(s)
+FROM table_name1
+RIGHT JOIN table_name2 
+ON table_name1.column_name=table_name2.column_name
+
+(implemented)
+select common_name
+from table_1
+right join phylogenic_order
+ON table_name1.column_name=table_name2.column_name
+
+(proof)
+Error: RIGHT and FULL OUTER JOINs are not currently supported
