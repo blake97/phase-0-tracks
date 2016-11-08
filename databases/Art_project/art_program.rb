@@ -120,7 +120,7 @@ until valid_income
   end
 end
 
-def search_art()
+def search_art
   puts "What medium?"
   medium_in = gets.chomp.downcase
   if medium_in == "oil"
@@ -134,7 +134,7 @@ def search_art()
     puts "I'm sorry, we don't have any #{medium_in} works."
   end
 
-  db.execute (SELECT art_pieces.name,
+  return_art = db.execute (SELECT art_pieces.name,
               collections.name,
               media.name,
               styles.name,
@@ -146,10 +146,14 @@ def search_art()
               styles
 
        Where  medium.id == medium_id
-       
+
        JOIN   art_pieces
               ON art_pieces.style_id = styles.id,
               AND art_pieces.business_id = businesses.id,
               AND art_pieces.collection_id = collections.id;
         )
+
+  puts return_art.each do |artpiece|
+    p artpiece
+  end
 end
