@@ -135,23 +135,23 @@ def search_art
   end
 
   return_art = db.execute (SELECT art_pieces.name,
-              collections.name,
-              media.name,
-              styles.name,
-              collections.relative_price
-             
-       FROM   collections,
-              art_pieces,
-              media,
-              styles
+                           collections.name,
+                           media.name,
+                           styles.name,
+                           collections.relative_price
 
-       Where  medium.id == medium_id
+                           FROM   collections,
+                           art_pieces,
+                           media,
+                           styles
 
-       JOIN   art_pieces
-              ON art_pieces.style_id = styles.id,
-              AND art_pieces.business_id = businesses.id,
-              AND art_pieces.collection_id = collections.id;
-        )
+                           Where  medium.id == medium_id
+
+                           JOIN   art_pieces
+                           ON art_pieces.style_id = styles.id,
+                           AND art_pieces.business_id = businesses.id,
+                           AND art_pieces.collection_id = collections.id;
+                           )
 
   puts return_art.each do |artpiece|
     p artpiece
