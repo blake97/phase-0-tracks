@@ -1,18 +1,10 @@
+function changeBackgroundColor(event) {
+event.target.style.backgroundColor = "red";
+}
 
 var background = document.getElementsByTagName("body");
 background = background[0];
 background.addEventListener("click", changeBackgroundColor);
-
-
-function changeBackgroundColor(event) {
-  
-event.target.style.backgroundColor = "red";
-}
-
-var background = document.getElementById("body");
-
-background.addEventListener("click", changeBackgroundColor);
-
 
 
 // // -------
@@ -27,13 +19,23 @@ background.addEventListener("click", changeBackgroundColor);
 
 // // or this way? 
 
-// event.target.style.visibility = "visible";
-// }
+function showAfter(){
+var aftermath = document.getElementById("div#after");
+aftermath.style.visibility = "visible";
+}
 
-// var aftermath = document.getElementById("after");
-// aftermath.addEventListener("click", showAfter);
+var clickpic = document.getElementById("div#before");
+clickpic.addEventListener("click", showAfter);
 
 
 // // I can't get this to work at all. It's driving me mad. 've been here hours, but it's rabithole after rabithole.
+
+
+
+
+
+
+
+
 
 
